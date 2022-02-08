@@ -1,0 +1,40 @@
+<header>
+    <div class="wrapper">
+        <h1>Café Hiyoto</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Menu</a>
+                </li>
+                <li>
+                    <a href="/panier">Panier</a>
+                </li>
+                {{#if admin}}
+                <a href="/commande">Commandes</a>
+                {{/if}}
+                <li>
+
+                </li>
+                {{#unless user}}
+                <li>
+                    <a href="/connexion">Se connecter</a>
+                </li>
+                {{/unless}}
+                {{#if user}}
+                <li>
+                    <form method="post" action="/deconnexion">
+                        <input type="submit" class="submitD" value="Deconnexion" />
+                    </form>
+
+                    <!-- <a href="/commande">Commandes</a>-->
+                </li>
+                <li>
+                    Bonjours {{user.email}}
+                </li>
+                {{/if}}
+
+
+            </ul>
+        </nav>
+    </div>
+</header>
